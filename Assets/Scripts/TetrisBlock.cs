@@ -11,7 +11,7 @@ public class TetrisBlock : MonoBehaviour
     public static int height=20;
     private static Transform[,] grid = new Transform[width, height];
 
-    int score;
+    public int score;
   
 
 /*    
@@ -38,7 +38,7 @@ public class TetrisBlock : MonoBehaviour
 
     void Start()
     {
-        score = 0;
+       
     }
 
     // Update is called once per frame
@@ -149,7 +149,7 @@ public class TetrisBlock : MonoBehaviour
             Destroy(grid[j, i].gameObject);
             grid[j, i] = null;
         }
-        score = 1;
+        score += 1;
     }
     void RowDown(int i) {
 

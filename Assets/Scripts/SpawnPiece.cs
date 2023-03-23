@@ -12,6 +12,7 @@ public class SpawnPiece : MonoBehaviour
 
     public Text pointsText;
 
+    int points;
     void Shuffle7bag()
     {
         
@@ -49,7 +50,8 @@ public class SpawnPiece : MonoBehaviour
 
     public void NewTetromino(int score)
     {
-
+        points += score;
+        pointsText.text = points.ToString();
         if (i > 6)
         {
             Shuffle7bag();
@@ -73,9 +75,9 @@ public class SpawnPiece : MonoBehaviour
 
 
     public void Over(int score) {
-
+       
         GameOverScreen.SetActive(true);
-        pointsText.text = score.ToString();
+        
     
     
     }
